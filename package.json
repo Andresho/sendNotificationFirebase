@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Andre Hoffmann(phi) <andre.hoffmann@meta.com.br>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
