@@ -1,14 +1,11 @@
-const fs = require('fs');
-
-const writeFile = token => {
-    return fs.writeFileSync('./save/lastToken', token);
-}
+const fs = require('fs').promises;
 
 const saveToken = async (req, res) => {
     const { token } = req.body;
 
     try {
-        await writeFile(token);
+        await fs.mkdir(`./save`, { recursive: true });
+        await fs.writeFile('./save/lastToken', token);
         console.log("token saved");
         res.send("token saved");
     } catch (error) {
