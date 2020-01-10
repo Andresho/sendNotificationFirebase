@@ -8,17 +8,12 @@ admin.initializeApp({
 });
 
 const sendNotification = async (req, res) => {
+    const payload = req.body;
+
     try {
         const path = './save/lastToken';
 
         const token = await fs.readFile(path, { encoding: 'utf-8' });
-
-        const payload = {
-            notification: {
-                title: "IT'S WORKING!",
-                body: 'HAHAHAHA'
-            }
-        };
 
         const options = {
             priority: 'high',
